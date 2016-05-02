@@ -89,13 +89,13 @@
     </build>
 
     <dependencies>
-
+<!--
 <dependency>
  <groupId>org.wildfly.swarm</groupId>
   <artifactId>undertow-runtime</artifactId>
   <version>1.0.0.Beta7-SNAPSHOT</version>
 </dependency>
-
+-->
    <dependency>
     <groupId>org.wildfly.swarm</groupId>
     <artifactId>keycloak-server</artifactId>
