@@ -91,7 +91,7 @@
     <dependencies>
         <dependency>
             <groupId>org.wildfly.swarm</groupId>
-            <artifactId>keycloak-server-service</artifactId>
+            <artifactId>keycloak-server</artifactId>
             <version>${version.wildfly-swarm}</version>
         </dependency>
         <dependency>
