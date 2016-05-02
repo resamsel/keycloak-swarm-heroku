@@ -89,10 +89,17 @@
     </build>
 
     <dependencies>
-      <dependency>
-    <groupId>org.keycloak</groupId>
-    <artifactId>keycloak-appliance-dist-all</artifactId>
-    <version>1.2.0.Beta1</version>
+
+<dependency>
+ <groupId>org.wildfly.swarm</groupId>
+  <artifactId>undertow-runtime</artifactId>
+  <version>1.0.0.Beta7-SNAPSHOT</version>
+</dependency>
+
+   <dependency>
+    <groupId>org.wildfly.swarm</groupId>
+    <artifactId>keycloak-server</artifactId>
+    <version>1.0.0.CR2</version>
 </dependency>
         <dependency>
             <groupId>org.postgresql</groupId>

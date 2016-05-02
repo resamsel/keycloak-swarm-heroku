@@ -10,8 +10,8 @@ import org.wildfly.swarm.config.undertow.server.Host;
 import org.wildfly.swarm.config.undertow.servlet_container.JSPSetting;
 import org.wildfly.swarm.config.undertow.servlet_container.WebsocketsSetting;
 import org.wildfly.swarm.container.Container;
-import org.wildfly.swarm.container.Fraction;
-import org.wildfly.swarm.container.SocketBinding;
+import org.wildfly.swarm.spi.api.Fraction;
+import org.wildfly.swarm.spi.api.SocketBinding;
 import org.wildfly.swarm.datasources.DatasourcesFraction;
 import org.wildfly.swarm.keycloak.server.KeycloakServerFraction;
 import org.wildfly.swarm.undertow.UndertowFraction;
@@ -57,7 +57,7 @@ public class Main {
             }
 
             @Override
-            public void initialize(Container.InitContext initContext) {
+            public void initialize(Fraction.InitContext initContext) {
                 initContext.socketBinding(new SocketBinding("proxy-https").port(443));
             }
 
