@@ -90,9 +90,9 @@
 
     <dependencies>
         <dependency>
-            <groupId>org.wildfly.swarm</groupId>
-            <artifactId>keycloak-server</artifactId>
-            <version>${version.wildfly-swarm}</version>
+          <groupId>org.keycloak</groupId>
+    <artifactId>keycloak-appliance-dist-all</artifactId>
+    <version>1.2.0.Beta1</version>
         </dependency>
         <dependency>
             <groupId>org.postgresql</groupId>
