@@ -28,7 +28,7 @@ public class Main {
 
     // Extract the postgres connection details from the Heroku environment variable
     // (which is not a JDBC URL)
-    DatabaseUrl databaseUrl = DatabaseUrl.extract(true);
+    DatabaseUrl databaseUrl = DatabaseUrl.extract();
 
     System.out.println("DATABASE_URL: " + System.getenv("DATABASE_URL"));
     System.out.println("Database URL: " + databaseUrl.jdbcUrl());
@@ -51,9 +51,8 @@ public class Main {
     UndertowFraction undertowFraction = new UndertowFraction();
     undertowFraction
         .server("default-server",
-            server -> server
-                .httpListener(new HTTPListener<>("default").socketBinding("http")
-                    .redirectSocket("proxy-https").proxyAddressForwarding(true))
+            server -> server.httpListener(
+                new HTTPListener<>("default").socketBinding("http").proxyAddressForwarding(true))
                 .host(new Host<>("default-host")))
         .bufferCache(new BufferCache<>("default"))
         .servletContainer(new ServletContainer<>("default")
