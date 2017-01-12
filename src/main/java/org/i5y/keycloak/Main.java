@@ -30,6 +30,7 @@ public class Main {
     // (which is not a JDBC URL)
     DatabaseUrl databaseUrl = DatabaseUrl.extract();
 
+    System.out.println("PORT: " + port);
     System.out.println("DATABASE_URL: " + System.getenv("DATABASE_URL"));
     System.out.println("Database URL: " + databaseUrl.jdbcUrl());
 
