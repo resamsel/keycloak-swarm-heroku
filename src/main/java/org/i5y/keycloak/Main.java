@@ -20,15 +20,17 @@ public class Main {
 
     // Heroku requires you bind to the specified PORT
     String port = System.getenv("PORT");
-    if (port != null) {
-      System.setProperty("jboss.http.port", port);
-    }
+    if (port != null)
+      System.setProperty("swarm.http.port", port);
+    String local = System.getenv("LOCAL");
+    if (local != null)
+      System.setProperty("local", local);
 
     Swarm container = new Swarm();
 
     // Extract the postgres connection details from the Heroku environment variable
     // (which is not a JDBC URL)
-    DatabaseUrl databaseUrl = DatabaseUrl.extract();
+    DatabaseUrl databaseUrl = DatabaseUrl.extract(Boolean.getBoolean("local"));
 
     System.out.println("PORT: " + port);
     System.out.println("DATABASE_URL: " + System.getenv("DATABASE_URL"));
